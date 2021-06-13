@@ -1,0 +1,147 @@
+.modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+
+    background-color: rgba(0, 0, 0, .9);
+
+    z-index: $z-index-modal;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+
+    &.modal-no-overlay {
+        background-color: transparent;
+    }
+
+    &.show {
+        display: flex;
+    }
+
+    .modal-popup {
+        position: relative;
+    
+        max-width: 800px;
+        max-height: 400px;
+        width: 100%;
+        height: 100%;
+        background-color: $modal-popup-bg-color;
+
+        div.close {
+            position: absolute;
+            right: 0;
+            z-index: 1;
+        
+            background-image: url('/images/icons/Multiplication_Sign-white.svg');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+        
+            width: 75px;
+            height: 75px;
+        
+            cursor: pointer;
+        }
+    }
+
+    div.portfolio-popup {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        grid-template-rows: 1fr 50px;
+
+        div.portfolio-image-container {
+            position: relative;
+            grid-row: 1/3;
+            overflow: hidden;
+            background-color: $page-bg-color-lighter;
+
+            img.portfolio-image {
+                max-height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        div.portfolio-description {
+            box-sizing: border-box;
+            padding: 20px 20px;
+            overflow-y: auto;
+            background-color: $page-bg-color-darker;
+        }
+
+        div.portfolio-footer {
+            display: flex;
+            justify-content: center;
+        
+            background-color: $page-bg-color-lighter;
+
+            a {
+                text-decoration: none;
+                color: white;
+            
+                display: inline-flex;
+                align-items: center;
+
+                .portfolio-links {
+                    cursor: pointer;
+                }
+            }
+
+            .portfolio-links {    
+                margin: 0 10px;
+                color: white;
+            
+                display: inline-flex;
+                align-items: center;
+            
+                cursor: default;
+
+                &.left-icon {
+                    background-size: 20px;
+                    background-repeat: no-repeat;
+                    background-position: left;
+                    padding-left: 28px;
+
+                    &.public {
+                        background-image: url('/images/icons/eye-gray.svg');
+                    }
+
+                    &.private {
+                        background-image: url('/images/icons/eye-crossed-gray.svg');
+                        filter: brightness(0.5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    div.modal {
+        div.modal-popup {
+            max-height: 100%;
+
+            div.close {
+                background-color: rgba(0, 0, 0, .8);
+            }
+        }
+
+        div.portfolio-popup {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0px 1fr 50px;
+
+            div.portfolio-image-container {
+                grid-row: auto;
+
+                img.portfolio-image {
+                    max-height: none;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

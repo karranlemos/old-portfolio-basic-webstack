@@ -1,0 +1,30 @@
+$bg-color: rgb(27, 27, 27);
+$color: white;
+$a-color: rgb(114, 114, 221);
+
+$main-title-color: rgb(223, 223, 223);
+$main-subtitle-color: rgb(182, 182, 182);
+
+$page-bg-color-darker: rgb(13, 13, 13);
+$page-bg-color-lighter: rgb(17, 17, 17);
+
+$footer-bg-color: rgb(10, 10, 10);
+$navbar-bg-color: rgb(10, 10, 10);
+
+$img-placeholder-color: rgb(25, 25, 25);
+
+$z-index-modal: 1010;
+
+$modal-popup-bg-color: $page-bg-color-lighter;
+
+
+
+$pages-width: 1000px;
+$navbar-height-top: 100px;
+
+/* if changed, must change const in MainMenu.goToSection() */
+$navbar-height-pinned: 80px;
+
+$menu-button-mobile-height: 73px;
+
+$mobile-width: 700px;

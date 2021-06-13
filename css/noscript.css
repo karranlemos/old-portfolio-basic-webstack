@@ -1,0 +1,4 @@
+nav#main-menu {
+    background-color: var(--navbar-bg-color);
+    height: var(--navbar-height-pinned);
+}
